@@ -1,0 +1,42 @@
+cat << 'EOF' > .gitignore
+# Nix-related
+/nix/
+result
+result-*
+default.nix.drv
+.envrc
+.direnv/
+
+# Positron / RStudio / VS Code
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Quarto / rendering outputs
+*_files/
+*.html
+*.pdf
+*.docx
+*.pptx
+_site/
+docs/
+
+# General temp / OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+EOF
