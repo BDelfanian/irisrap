@@ -1,0 +1,7 @@
+^\\.envrc$
+^quarto/.*_files$
+^Documentation_files$
+^Documentation\\.html$
+^Documentation\\.md$
+^default\\.nix$
+^gen-env\\.R$

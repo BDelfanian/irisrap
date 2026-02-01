@@ -8,6 +8,13 @@ execute:
   warning: false
 ---
 
+```{r setup}
+# Prepend user library to ensure irisrap is found
+.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+library(irisrap)
+library(tidyverse)
+```
+
 ## Introduction
 
 This report analyzes the built-in `iris` dataset using pure functions defined in `functions/R/clean_and_summarize.R`.  
@@ -17,9 +24,6 @@ The analysis covers cleaning, summarizing, and visualizing measurements by speci
 
 ```{r}
 #| label: load-and-clean
-library(tidyverse)
-source("../functions/R/clean_and_summarize.R")
-
 data(iris)
 
 # Clean and filter

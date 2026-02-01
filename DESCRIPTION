@@ -1,0 +1,19 @@
+Package: irisrap
+Title: Iris Reproducible Analysis Package
+Version: 0.1.0
+Authors@R: person("Behrouz Delfanian", email = "behrouz.delfanian@gmail.com", role = c("aut", "cre"))
+Description: Simple package for cleaning, summarizing, and plotting iris data.
+License: MIT + file LICENSE
+URL: https://github.com/BDelfanian/rap-final-project
+BugReports: https://github.com/BDelfanian/rap-final-project/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: R (>= 4.5.0)
+Imports:
+    dplyr,
+    ggplot2,
+    tidyr,
+    rlang
+Suggests: testthat
+Config/testthat/edition: 3

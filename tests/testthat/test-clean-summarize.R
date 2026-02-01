@@ -1,7 +1,7 @@
 # tests/testthat/test-clean-summarize.R
 
 library(testthat)
-source("../../functions/R/clean_and_summarize.R")
+library(irisrap)
 
 test_data <- iris
 
