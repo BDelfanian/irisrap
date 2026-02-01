@@ -1,7 +1,7 @@
 # Reproducible Analytical Pipeline - Final Project
 
 **Course:** Reproducible Analytical Pipelines<a href="https://rap4mads.eu/" target="_blank" rel="noopener noreferrer nofollow"></a>  
-**Student:** Behrouz Delfanian
+**Student:** Behrouz Delfanian  
 **Date:** January 2026  
 **Location:** Luxembourg
 

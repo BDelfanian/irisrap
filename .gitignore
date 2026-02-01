@@ -24,5 +24,6 @@ __pycache__/
 .python-version
 
 # General
+test_files
 .DS_Store
 Thumbs.db
