@@ -18,15 +18,15 @@ rix(
     "visNetwork"         # for tar_visnetwork()
   ),
 
-  py_conf = list(
-    py_version = "3.11",
-    py_pkgs = c(
-      "pandas",
-      "seaborn",
-      "matplotlib",
-      "pytest"
-    )
-  ),
+#  py_conf = list(
+#    py_version = "3.11",
+#    py_pkgs = c(
+#      "pandas",
+#      "seaborn",
+#      "matplotlib",
+#      "pytest"
+#    )
+#  ),
 
   # No git repo yet → we set project_path to current directory
   project_path = ".",

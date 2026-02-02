@@ -326,3 +326,47 @@ R -e "targets::tar_destroy(destroy = 'all')"
 >.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
 >```
 >This ensures `library(irisrap)` succeeds during pipeline execution.
+
+## Step 7 – Containerization with Docker
+**Goal**: Package the entire project (Nix env + `irisrap` + pipeline + report) into a Docker image for full portability.
+
+- Create a Dockerfile that:
+  - Starts from a base Ubuntu image
+  - Installs Nix
+  - Sets up the reproducible environment via `default.nix`
+  - Installs the local `irisrap` package
+  - Runs the {targets} pipeline
+  - Renders the Quarto report
+
+- Build and test the image locally
+- Document how to reproduce everything inside Docker
+
+### 7.1 Create Dockerfile in project root
+Create a file called `Dockerfile` in `~/irisrap`.
+
+### 7.2 Create `.dockerignore` (exclude unnecessary files)
+Create `.dockerignore` in root.
+
+This keeps the image small and clean.
+
+### 7.3 Build the Docker image
+In terminal (project root):
+
+```bash
+# Build image (named irisrap)
+docker build -t irisrap .
+```
+
+>Important notes on Docker build
+>**First build time & size**:
+>- The initial `docker build` took ~25 minutes and used >15 GB of disk space.
+>- This is expected: Nix downloads and caches all dependencies (R, tidyverse, quarto, >targets, compilers, etc.) with exact reproducibility.
+>- Subsequent builds are much faster (~1–3 minutes) because Docker caches layers.
+
+### 7.4 Test the container
+Run the pipeline + report inside Docker:
+
+```bash
+docker run --rm -v $(pwd)/quarto:/app/quarto irisrap
+```
+

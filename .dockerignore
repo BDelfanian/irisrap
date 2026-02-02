@@ -1,0 +1,12 @@
+.git
+.gitignore
+.Rproj.user
+.Rhistory
+.RData
+default.nix.drv
+result
+result-*
+.direnv
+.envrc
+Documentation*
+quarto/*_files
